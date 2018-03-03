@@ -52,3 +52,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Added at 2018-03-03 03:58:48 -0300 by vinux:
+gem "sucker_punch", "~> 2.0"
