@@ -10,22 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180303052425) do
+ActiveRecord::Schema.define(version: 20180310053542) do
 
   create_table "gps_waypoints", force: :cascade do |t|
     t.decimal "latitude"
     t.decimal "longitude"
-    t.datetime "sentAt"
+    t.datetime "sent_at"
     t.integer "truck_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["truck_id"], name: "index_gps_waypoints_on_truck_id"
   end
 
   create_table "trucks", force: :cascade do |t|
-    t.string "identifier"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text "identifier", null: false
+    t.integer "current_gps_waypoint_id"
+    t.index ["current_gps_waypoint_id"], name: "index_trucks_on_current_gps_waypoint_id"
+    t.index ["identifier"], name: "index_trucks_on_identifier", unique: true
   end
 
 end

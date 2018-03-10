@@ -1,0 +1,21 @@
+<h1>Trucks </h1>
+
+<table>
+<tr>
+<td> id </td>
+<td> identifier </td>
+<td> gps data </td>
+</tr>
+<% @trucks.each do |t|%>
+<tr>
+<td> <%= t.id %> </td>
+<td><%= t.identifier %> </td>
+<% if t.current_gps_waypoint %>
+<% g = t.current_gps_waypoint %>
+<td>longitud: <%= g.longitude %>, latitud: <%= g.latitude %> enviado el: <%= g.sent_at %> </td>
+<% end %>
+
+</tr>
+<% end %>
+
+</table>

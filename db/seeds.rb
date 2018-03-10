@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+trucks=Truck.create([{identifier: "123123"},{identifier: "abcabc"},{identifier: "abc123"},{identifier: "abcabcqsa"}])
+gps = GpsWaypoint.create({latitude: 30.10,longitude: 10.10,sent_at: DateTime.now,		truck: trucks[0]})
