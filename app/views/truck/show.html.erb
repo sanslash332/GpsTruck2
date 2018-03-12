@@ -19,3 +19,19 @@
 <% end %>
 
 </table>
+
+<h1> the map </h1>
+<div id="map" style='width: 800px; height: 400px;'>
+
+
+</div>
+
+<script>
+handler=Gmaps.build('Google');
+handler.buildMap({provider: {}, internal: {id: 'map'}}, function() {
+m=handler.addMarkers(<%=raw @gpsPoints.to_json %>);
+handler.bounds.extendWith(m);
+handler.fitMapToBounds();
+
+});
+</script>

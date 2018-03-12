@@ -55,3 +55,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added at 2018-03-03 03:58:48 -0300 by vinux:
 gem "sucker_punch", "~> 2.0"
+
+# Added at 2018-03-11 21:48:35 -0300 by vinux:
+gem "gmaps4rails", "~> 2.1"
+
+# Added at 2018-03-12 01:02:23 -0300 by vinux:
+gem "underscore-rails", "~> 1.8"
