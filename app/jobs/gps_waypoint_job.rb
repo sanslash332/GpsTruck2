@@ -1,9 +1,8 @@
 class GpsWaypointJob
   include SuckerPunch::Job
 
+#background method that process the add of a new gps wapoint, and new truck if necesary
   def perform(*args)
-puts "la otra version"
-puts args[0]
 args=args[0]
 @truck = Truck.find_by_identifier(args[:vehicle_identifier])
 if !@truck
