@@ -16,7 +16,15 @@ end
 @gps.latitude=args[:latitude]
 @gps.longitude=args[:longitude]
 @gps.sent_at = args[:sent_at]
+if @truck.current_gps_waypoint
+if @truck.current_gps_waypoint.sent_at <= @gps.sent_at
 @truck.current_gps_waypoint=@gps
+end
+
+else
+
+@truck.current_gps_waypoint=@gps
+end
 if(@gps.valid?)
 @gps.save
 @truck.save

@@ -2,7 +2,7 @@ class TruckController < ApplicationController
 #get /show
 # show the list with all trucks, and put it on the map using the last waypoint
   def show
-@trucks = Truck.all
+@trucks = Truck.all.includes(:current_gps_waypoint)
 #filter the trucks only with waypoints
 trucksWithGps=@trucks.select do |t|
 t.current_gps_waypoint
